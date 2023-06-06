@@ -45,6 +45,7 @@ import { Export_ordersComponent } from './dashboard/component/warehouse/export_o
 import { BannerComponent } from './dashboard/component/Web_user/banner/banner.component';
 import { NgChartsModule } from 'ng2-charts';
 import { Store_informationComponent } from './dashboard/component/Web_user/store_information/store_information.component';
+import { OrderDetailComponent } from './dashboard/component/order/order-detail/order-detail.component';
 
 const router_home:Routes=[
   {
@@ -90,6 +91,11 @@ const router_home:Routes=[
     {
       path:"order",
       component:OrderComponent,
+      canActivate: [AuthGuardGuard],
+    },
+    {
+      path:"order-detail/:id",
+      component:OrderDetailComponent,
       canActivate: [AuthGuardGuard],
     },
     {
@@ -233,6 +239,7 @@ const router_home:Routes=[
     Orders_are_being_deliveredComponent,
     BannerComponent,
     Store_informationComponent,
+    OrderDetailComponent,
 
 
   ],
