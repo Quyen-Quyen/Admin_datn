@@ -45,10 +45,13 @@
                   <div class="status-content" [ngStyle]="getStatusStyle(item.status)">{{ getStatusText(item.status) }}</div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-secondary me-2" data-bs-toggle="modal" (click)="get_order_id(item.id)"
-                  data-bs-target="#model_detail"  title="Xem chi tiết đơn hàng">
-                  <i style="font-size: 20px;" class="fas fa-info"></i>
-                </button>
+                  <a [routerLink]="['/order-detail/',item.id]">
+                    <button type="button" class="btn btn-secondary me-2" data-bs-toggle="modal"
+                     title="Xem chi tiết đơn hàng">
+                    <!-- <i class="fas fa-info"></i> -->
+                    <i style="font-size: 20px;" class="fa-solid fa-eye"></i>
+                  </button>
+                  </a>
                   <!-- <button  class="btn btn-primary" (click)="update_status_orders(item.id)"> Xác nhận đơn </button> -->
                   <!-- <button  data-bs-toggle="modal" data-bs-target="#Modal_delete"
                    >
